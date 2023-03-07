@@ -16,12 +16,12 @@ export const NAV_ITEMS: Array<NavItem> = [
       {
         label: 'Searching',
         subLabel: 'Trending Design to inspire you',
-        href: '#',
+        href: '/algorithms/searching',
       },
       {
         label: 'Sorting',
         subLabel: 'Up-and-coming Designers',
-        href: '#',
+        href: '/algorithms/sorting',
       },
     ],
   },
@@ -31,16 +31,16 @@ export const NAV_ITEMS: Array<NavItem> = [
       {
         label: 'Linked List',
         subLabel: 'Coming soon',
-        href: '#',
+        href: '/data-structures/linked-list',
       }
     ],
   },
   {
     label: 'Blog',
-    href: '#',
+    href: '/blog',
   },
   {
     label: 'Dev',
-    href: '#',
+    href: '/dev',
   },
 ];

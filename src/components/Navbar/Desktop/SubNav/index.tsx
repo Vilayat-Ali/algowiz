@@ -5,9 +5,10 @@ import {
   Text,
   Stack,
   Icon,
-  Link,
   useColorModeValue,
 } from '@chakra-ui/react';
+
+import Link from "next/link";
 
 // icons
 import {
@@ -18,18 +19,18 @@ import type { NavItem } from '../../NavItems';
 
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   return (
-    <Link
-      href={href}
-      role={'group'}
-      display={'block'}
-      p={2}
-      rounded={'md'}
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
+    <Link href={href as string}>
+      <Box role={'group'}
+        display={'block'}
+        p={2}
+        rounded={'md'}
+        _hover={{ bg: useColorModeValue('gray.200', 'gray.900') }}
+        >  
       <Stack direction={'row'} align={'center'}>
         <Box>
           <Text
             transition={'all .3s ease'}
-            _groupHover={{ color: 'pink.400' }}
+            _groupHover={{ color: 'gray.800' }}
             fontWeight={500}>
             {label}
           </Text>
@@ -43,9 +44,10 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           justify={'flex-end'}
           align={'center'}
           flex={1}>
-          <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={'gray.800'} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
+      </Box>
     </Link>
   );
 };

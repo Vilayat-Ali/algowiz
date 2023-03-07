@@ -10,13 +10,18 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  Icon
 } from '@chakra-ui/react';
+
+import Image from "next/image";
 
 // icons
 import {
   HamburgerIcon,
   CloseIcon,
 } from '@chakra-ui/icons';
+
+import {AiFillGithub} from "react-icons/ai";
 
 // components
 import DesktopNav from "./Desktop";
@@ -51,12 +56,8 @@ const Navbar = () => {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Text
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}>
-            Logo
-          </Text>
+          {/* LOGO */}
+            <Text fontSize={{base: '', md: '1.25vw'}} fontWeight="700">AlgoWiz</Text>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
@@ -69,17 +70,22 @@ const Navbar = () => {
           direction={'row'}
           spacing={6}>
           <Button
+            width={{md: "8vw"}}
             as={'a'}
             display={{ base: 'none', md: 'inline-flex' }}
             fontSize={'sm'}
+            bg="gray.800"
+            _hover={{
+              bg: "gray.900"
+            }}
             fontWeight={600}
             color={'white'}
-            bg={'pink.400'}
-            href={'#'}
-            _hover={{
-              bg: 'pink.300',
-            }}>
-            View on Github
+            href={'https://github.com/Vilayat-Ali/algowiz'}
+            justifyContent="space-around"
+            alignItems="center"
+            >
+            Github 
+            <Icon as={AiFillGithub} fontSize={{base: '', md: '1.7vw'}} />
           </Button>
         </Stack>
       </Flex>
